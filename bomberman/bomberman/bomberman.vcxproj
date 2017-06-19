@@ -125,16 +125,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Bomb.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PowerUp.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bomb.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PowerUp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

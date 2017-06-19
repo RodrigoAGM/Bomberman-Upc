@@ -24,6 +24,15 @@
     <ClInclude Include="MyForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Bomb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PowerUp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Player.cpp">
@@ -33,6 +42,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MyForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bomb.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PowerUp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
