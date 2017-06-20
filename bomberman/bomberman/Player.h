@@ -2,22 +2,14 @@
 using namespace std;
 enum COLORS
 {
-	RED, GREEN, BLUE, BLACK, WHITE
+	RED, GREEN, BLUE, BLACK, WHITE , BROWN
 };
 class Player
 {
 	string nickname;
 	COLORS color;
 public:
-	Player();
-	~Player();
 
-	void setNickname(string nickname) {
-		this->nickname = nickname;
-	}
-
-	string getNickname() {
-		return this->nickname;
 	}
 
 };
