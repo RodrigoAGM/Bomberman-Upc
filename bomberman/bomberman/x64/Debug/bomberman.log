@@ -1,5 +1,5 @@
 ﻿  Player.cpp
   .NETFramework,Version=v4.5.2.AssemblyAttributes.cpp
   Bomb.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
-  bomberman.vcxproj -> C:\bomberman-upc\bomberman\x64\Debug\bomberman.exe
-  bomberman.vcxproj -> C:\bomberman-upc\bomberman\x64\Debug\bomberman.pdb (Partial PDB)
+  bomberman.vcxproj -> C:\Users\dazte\Desktop\Repositorios-NET 2015\bomberman\x64\Debug\bomberman.exe
+  bomberman.vcxproj -> C:\Users\dazte\Desktop\Repositorios-NET 2015\bomberman\x64\Debug\bomberman.pdb (Partial PDB)
