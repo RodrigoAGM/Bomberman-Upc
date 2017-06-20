@@ -7,11 +7,20 @@ enum COLORS
 };
 class Player
 {
-	int vidas;
-	string nickname;
-	COLORS color;
+	int Lifes;
+	string Nickname;
+	COLORS Color;
+	int Number_bombs;
+	int Items;
+	int Power;
+
 public:
 	Player();
 	~Player();
+	void letBombs();
+	void kicksBombs();
+	void walk();
+	void throwBombs();
+	void collectPower();
 };
 
