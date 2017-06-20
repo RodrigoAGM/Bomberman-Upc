@@ -7,6 +7,7 @@ enum COLORS
 };
 class Player
 {
+	int vidas;
 	string nickname;
 	COLORS color;
 public:
