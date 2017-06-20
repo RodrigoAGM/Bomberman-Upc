@@ -2,7 +2,7 @@
 using namespace std;
 enum COLORS
 {
-	RED, GREEN, BLUE, BLACK, WHITE
+	RED, GREEN, BLUE, YELLOW, BLACK, WHITE
 };
 class Player
 {
