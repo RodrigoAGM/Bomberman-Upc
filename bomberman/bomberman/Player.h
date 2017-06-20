@@ -10,8 +10,8 @@ class Player
 	string nickname;
 	COLORS color;
 public:
-
-	
+	Player();
+	~Player();
 
 };
 
