@@ -25,13 +25,16 @@ void Player::paint(Graphics^g, Bitmap^img){
 	g->DrawImage(img, x, y, portion, GraphicsUnit::Pixel);
 
 }
-void Player::move(Graphics^g, int index, bool pass,bool passb){
+void Player::move(int **matriz, int index, bool pass,bool passb){
 	int dx1 = 10;
 	int dy1 = 10;
+	int velocidad = 10;
+	int h = 600;
+	int w = 600;
 	if (pass != true) {
 		switch (index) {
 		case 1:
-			if (y + height > 715) {
+			if (y + h > 715) {
 				dx = 0;
 				dy = 0;
 			}
@@ -40,7 +43,7 @@ void Player::move(Graphics^g, int index, bool pass,bool passb){
 			break;
 
 		case 3:
-			if (y - dy1 < 0 + 70 ) {
+			if (y - dy1 < 70) {
 				dx = 0;
 				dy = 0;
 			}
@@ -59,7 +62,7 @@ void Player::move(Graphics^g, int index, bool pass,bool passb){
 	if (passb != true) {
 		switch (index) {
 		case 0:
-			if (x - dx1 < 0 + 70  ) {
+			if (x - dx1 < 70) {
 				dx = 0;
 				dy = 0;
 			}
@@ -67,7 +70,7 @@ void Player::move(Graphics^g, int index, bool pass,bool passb){
 				dx = -speed;
 			break;
 		case 2:
-			if (x + width > 691 ) {
+			if (x + w > 691) {
 				dx = 0;
 				dy = 0;
 			}

@@ -28,7 +28,7 @@ public:
 	Player(int x, int y, string Nickname);
 	~Player();
 	void paint(Graphics^g, Bitmap^img);
-	void move(Graphics^g, int index, bool pass,bool passb);
+	void move(int **matriz, int index, bool pass,bool passb);
 	int getX();
 	int getY();
 	void setDX(int dx);

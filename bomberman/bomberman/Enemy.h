@@ -1,4 +1,6 @@
 #pragma once
+using namespace System::Drawing;
+
 class Enemy
 {
 private:
@@ -33,4 +35,5 @@ public:
 	void Set_dy(int value);
 
 	void Move(int matriz[15][15]);
+	void Draw(BufferedGraphics ^buffer, Bitmap ^Enemigo, int matriz[15][15]);
 };

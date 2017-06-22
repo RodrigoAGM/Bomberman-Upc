@@ -12,6 +12,7 @@ Enemy::Enemy(int xM, int yM)
 }
 
 
+
 Enemy::~Enemy()
 {
 }
@@ -31,3 +32,34 @@ void Enemy::Set_x(int value) { x = value; }
 void Enemy::Set_y(int value) { y = value; }
 void Enemy::Set_dx(int value) { dx = value; }
 void Enemy::Set_dy(int value) { dy = value; }
+
+void Enemy::Draw(BufferedGraphics ^buffer, Bitmap ^Enemigo, int matriz[15][15]) {
+
+	buffer->Graphics->DrawImage(Enemigo, x, y, 35, 35);
+	Move(matriz);
+}
+
+void Enemy::Move(int matriz[15][15]) {
+
+	if ((matriz[yM][xM - 1] == 2 || matriz[yM][xM - 1] == 3) && (matriz[yM][xM - 1] == 2 || matriz[yM][xM - 1] == 3)) {
+		if (matriz[yM + 1][xM] == 2 || matriz[yM + 1][xM] == 3) {
+			yM += 1;
+			y += dy;
+		}
+		else {
+			yM -= 1;
+			y -= dy;
+		}
+	}
+	else {
+
+		if (matriz[yM][xM + 1] == 2 || matriz[yM][xM + 1] == 3) {
+			xM -= 1;
+			x -= dx;
+		}
+		else {
+			xM += 1;
+			x += dx;
+		}
+	}
+}
