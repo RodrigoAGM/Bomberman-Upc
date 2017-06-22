@@ -1,9 +1,9 @@
 #include "PowerUp.h"
 
-
-
-PowerUp::PowerUp()
+PowerUp::PowerUp(int x, int y)
 {
+	this->x = x;
+	this->y = y;
 }
 
 

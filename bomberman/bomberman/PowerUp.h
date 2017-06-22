@@ -1,13 +1,19 @@
 #pragma once
+#include <string>
+
+using namespace std;
+
 class PowerUp
 {
 private:
+
 	int x;
 	int y;
-	int type;
+	string type;
+
 public:
-	PowerUp();
+
+	PowerUp(int x, int y);
 	~PowerUp();
 	void usePowerUp();
 };
-

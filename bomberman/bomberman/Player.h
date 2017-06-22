@@ -1,9 +1,11 @@
-#include<string>
+#pragma once
+#include <string>
+
 using namespace std;
+
 enum COLORS
 {
-	RED, GREEN, BLUE, BLACK, WHITE,LIGHTBLUE
-	
+	RED, GREEN, BLUE, BLACK, WHITE, LIGHTBLUE
 };
 class Player
 {
@@ -13,9 +15,14 @@ class Player
 	int Number_bombs;
 	int Items;
 	int Power;
+	int x;
+	int y;
+	int dx;
+	int dy;
 
 public:
-	Player();
+
+	Player(int x, int y, string Nickname);
 	~Player();
 	void letBombs();
 	void kicksBombs();
@@ -23,4 +30,3 @@ public:
 	void throwBombs();
 	void collectPower();
 };
-

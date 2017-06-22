@@ -1,4 +1,5 @@
 #pragma once
+#include "Map.h"
 
 namespace bomberman {
 
@@ -15,6 +16,17 @@ namespace bomberman {
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
 	public:
+
+		Bitmap^ Bsolido = gcnew Bitmap("BSolido.png");
+		Bitmap^ BDestructible = gcnew Bitmap("BDestructible.png");
+		Bitmap^ BBorde = gcnew Bitmap("BBorde.png");
+		Bitmap^ BPasto = gcnew Bitmap("BPasto.png");
+		Map *mapa = new Map();
+
+
+	private: System::Windows::Forms::Timer^  timer1;
+	public:
+
 		MyForm(void)
 		{
 			InitializeComponent();
@@ -34,12 +46,14 @@ namespace bomberman {
 				delete components;
 			}
 		}
+	private: System::ComponentModel::IContainer^  components;
+	protected:
 
 	private:
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -48,12 +62,39 @@ namespace bomberman {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"MyForm";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->components = (gcnew System::ComponentModel::Container());
+			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
+			this->SuspendLayout();
+			// 
+			// timer1
+			// 
+			this->timer1->Enabled = true;
+			this->timer1->Tick += gcnew System::EventHandler(this, &MyForm::timer1_Tick);
+			// 
+			// MyForm
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(675, 676);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
+			this->Name = L"MyForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->Text = L"MyForm";
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
+	private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
+
+		Graphics ^g = this->CreateGraphics();
+		BufferedGraphicsContext  ^espacio = BufferedGraphicsManager::Current;
+		BufferedGraphics ^buffer = espacio->Allocate(g, this->ClientRectangle);
+
+		GraphicsUnit::Pixel;
+		mapa->Read_Map(1, buffer, Bsolido, BDestructible, BBorde, BPasto);
+
+		buffer->Render(g);
+		delete buffer, espacio, g;
+	}
 	};
 }
