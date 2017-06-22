@@ -34,7 +34,7 @@ public:
 	void setDX(int dx);
 	void setDY(int dy);
 	int getNumberbombs();
-	int getVelocidad();
+	int getSpeed();
 	/*void letBombs();
 	void kicksBombs();
 	void throwBombs();

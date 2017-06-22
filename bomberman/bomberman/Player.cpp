@@ -88,7 +88,7 @@ int Player::getY(){ return y; }
 void Player::setDX(int dx) { this->dx = dx; }
 void Player::setDY(int dy) { this->dy = dy; }
 int Player::getNumberbombs(){ return Number_bombs; }
-int Player::getVelocidad() { return speed; }
+int Player::getSpeed() { return speed; }
 /*void Player::letBombs(){}
 void Player::kicksBombs(){}
 void Player::throwBombs(){}
