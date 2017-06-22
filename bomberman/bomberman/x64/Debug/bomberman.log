@@ -1,5 +1,6 @@
 ﻿  Map.cpp
   MyForm.cpp
+  Player.cpp
   PowerUp.cpp
   Generating Code...
   Bomb.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL

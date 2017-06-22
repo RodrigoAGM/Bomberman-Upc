@@ -5,13 +5,13 @@ PowerUp::PowerUp(int x, int y)
 	this->x = x;
 	this->y = y;
 
+
 }
 PowerUp::PowerUp(int type,int x, int y)
 {
 	this->x = x;
 	this->y = y;
 	this->type = type;
-
 }
 
 PowerUp::~PowerUp()

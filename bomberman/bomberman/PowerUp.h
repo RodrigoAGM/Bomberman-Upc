@@ -19,7 +19,6 @@ public:
 	PowerUp(int x, int y);
 	PowerUp(int type,int x, int y);
 	~PowerUp();
-	//void usePowerUp();
 	void paintPowerUP(Graphics^g, Bitmap^img);
 	Rectangle returnRectangle();
 	int getType();
