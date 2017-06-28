@@ -7,6 +7,7 @@ enum COLORS
 {
 	RED, GREEN, BLUE, BLACK, WHITE, LIGHTBLUE
 };
+enum Direcciones { Ninguna, Arriba, Abajo, Izquierda, Derecha };
 class Player
 {
 	int Lifes;
@@ -23,16 +24,20 @@ class Player
 	int height;
 	Rectangle portion;
 	int speed;
+	int R;
+	int G;
+	int B;
+	Direcciones last;
 public:
-
+	Direcciones direccion;
 	Player(int x, int y, string Nickname);
 	~Player();
-	void paint(Graphics^g, Bitmap^img);
-	void move(int **matriz, int index, bool pass,bool passb);
+	void paint(BufferedGraphics ^buffer);
+	void move(BufferedGraphics ^buffer);
 	int getX();
 	int getY();
-	void setDX(int dx);
-	void setDY(int dy);
+	void setX(int x);
+	void setY(int y);
 	int getNumberbombs();
 	int getSpeed();
 	/*void letBombs();

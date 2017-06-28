@@ -22,7 +22,7 @@ namespace bomberman {
 		Bitmap^ BBorde = gcnew Bitmap("BBorde.png");
 		Bitmap^ BPasto = gcnew Bitmap("BPasto.png");
 		Map *mapa = new Map();
-
+		Player *player1 = new Player(45,45,"asd");
 
 	private: System::Windows::Forms::Timer^  timer1;
 	public:
@@ -80,6 +80,8 @@ namespace bomberman {
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"MyForm";
+			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &MyForm::MyForm_KeyDown);
+			this->KeyUp += gcnew System::Windows::Forms::KeyEventHandler(this, &MyForm::MyForm_KeyUp);
 			this->ResumeLayout(false);
 
 		}
@@ -92,9 +94,29 @@ namespace bomberman {
 
 		GraphicsUnit::Pixel;
 		mapa->Read_Map(1, buffer, Bsolido, BDestructible, BBorde, BPasto);
-
+		player1->move(buffer);
 		buffer->Render(g);
 		delete buffer, espacio, g;
+	}
+	private: System::Void MyForm_KeyDown(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e) {
+		switch (e->KeyCode)
+		{
+		case Keys::Up:
+			player1->direccion = Direcciones::Arriba;
+			break;
+		case Keys::Down:
+			player1->direccion = Direcciones::Abajo;
+			break;
+		case Keys::Left:
+			player1->direccion = Direcciones::Izquierda;
+			break;
+		case Keys::Right:
+			player1->direccion = Direcciones::Derecha;
+			break;
+		}
+	}
+	private: System::Void MyForm_KeyUp(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e) {
+		player1->direccion = Direcciones::Ninguna;
 	}
 	};
 }

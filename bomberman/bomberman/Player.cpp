@@ -1,16 +1,20 @@
 #include "Player.h"
-
+using namespace System;
 Player::Player(int x, int y, string Nickname)
 {
+	Random rand;
 	this->x = x;
 	this->y = y;
 	this->Nickname = Nickname;
-	this->width = 0;
-	this->height = 0; 
+	this->width = 45;
+	this->height = 45; 
 	this->dx = 0;
 	this->dy = 0;
 	this->portion = Rectangle(0, 0, 0, 0);
 	this->speed = 0;
+	R = rand.Next(0, 256);
+	G = rand.Next(0, 256);
+	B = rand.Next(0, 256);
 }
 
 
@@ -18,78 +22,66 @@ Player::~Player()
 {
 }
 
-void Player::paint(Graphics^g, Bitmap^img){
-	width = img->Width;
-	height = img->Height;
-	portion = Rectangle(0, 50, width, height);
-	g->DrawImage(img, x, y, portion, GraphicsUnit::Pixel);
-
+void Player::paint(BufferedGraphics ^buffer) {
+	SolidBrush ^mybrush = gcnew SolidBrush(Color::FromArgb(R, G, B));
+	buffer->Graphics->FillRectangle(mybrush, x, y, width, height);
+	x += dx;
+	y += dy;
 }
-void Player::move(int **matriz, int index, bool pass,bool passb){
-	int dx1 = 10;
-	int dy1 = 10;
-	int velocidad = 10;
-	int h = 600;
-	int w = 600;
-	if (pass != true) {
-		switch (index) {
-		case 1:
-			if (y + h > 715) {
-				dx = 0;
-				dy = 0;
-			}
-			else
-				dy = speed;
-			break;
-
-		case 3:
-			if (y - dy1 < 70) {
-				dx = 0;
-				dy = 0;
-			}
-			else
-				dy = -speed;
-			break;
-
-		}
-
-		x += dx;
-		y += dy;
-
+void Player::move(BufferedGraphics ^buffer) {
+	switch (direccion)
+	{
+	case Direcciones::Abajo:
 		dx = 0;
-		dy = 0;
-	}
-	if (passb != true) {
-		switch (index) {
-		case 0:
-			if (x - dx1 < 70) {
-				dx = 0;
-				dy = 0;
-			}
-			else
-				dx = -speed;
-			break;
-		case 2:
-			if (x + w > 691) {
-				dx = 0;
-				dy = 0;
-			}
-			else
-				dx = speed;
-			break;
-		}
-		x += dx;
-		y += dy;
-
+		dy = 45;
+		last = Abajo;
+		break;
+	case Direcciones::Arriba:
 		dx = 0;
+		dy = -45;
+		last = Arriba;
+		break;
+	case Direcciones::Derecha:
+
+		dx = 45;
 		dy = 0;
+		last = Derecha;
+		break;
+	case Direcciones::Izquierda:
+
+
+		dx = -45;
+		dy = 0;
+		last = Izquierda;
+		break;
+	case Direcciones::Ninguna:
+		dx = dy = 0;
+		/*switch (ultima)
+		{
+		case Arriba:
+		indiceX = 0;
+		indiceY = 3;
+		break;
+		case Abajo:
+		indiceX = 0;
+		indiceY = 0;
+		break;
+		case Izquierda:
+		indiceX = 0;
+		indiceY = 1;
+		break;
+		case Derecha:
+		indiceX = 0;
+		indiceY = 2;
+		break;
+		}*/
 	}
-	pass = false;
+	paint(buffer);
 }
-int Player::getX(){ return x; }
-int Player::getY(){ return y; }
-void Player::setDX(int dx) { this->dx = dx; }
-void Player::setDY(int dy) { this->dy = dy; }
+int Player::getX() { return x; }
+int Player::getY() { return y; }
+void Player::setX(int x) { this->x = x; }
+void Player::setY(int y) { this->y = y; }
 int Player::getNumberbombs(){ return Number_bombs; }
 int Player::getSpeed() { return speed; }
 /*void Player::letBombs(){}

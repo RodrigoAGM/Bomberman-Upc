@@ -23,3 +23,4 @@ Class bomberman.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     System.Drawing.Bitmap BBorde : Public
     System.Drawing.Bitmap BPasto : Public
     Map* mapa : Public
+    Player* player1 : Public
