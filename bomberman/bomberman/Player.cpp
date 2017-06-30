@@ -29,11 +29,13 @@ void Player::paint(BufferedGraphics ^buffer) {
 	y += dy;
 }
 void Player::move(BufferedGraphics ^buffer) {
+
 	switch (direccion)
 	{
 	case Direcciones::Abajo:
 		dx = 0;
 		dy = 45;
+		
 		last = Abajo;
 		break;
 	case Direcciones::Arriba:

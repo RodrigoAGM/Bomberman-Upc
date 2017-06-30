@@ -23,6 +23,7 @@ namespace bomberman {
 		Bitmap^ BPasto = gcnew Bitmap("BPasto.png");
 		Map *mapa = new Map();
 		Player *player1 = new Player(45,45,"asd");
+		Enemy *o = new Enemy(0, 0);
 
 	private: System::Windows::Forms::Timer^  timer1;
 	public:
@@ -69,6 +70,7 @@ namespace bomberman {
 			// timer1
 			// 
 			this->timer1->Enabled = true;
+			this->timer1->Interval = 90;
 			this->timer1->Tick += gcnew System::EventHandler(this, &MyForm::timer1_Tick);
 			// 
 			// MyForm
@@ -91,10 +93,25 @@ namespace bomberman {
 		Graphics ^g = this->CreateGraphics();
 		BufferedGraphicsContext  ^espacio = BufferedGraphicsManager::Current;
 		BufferedGraphics ^buffer = espacio->Allocate(g, this->ClientRectangle);
-
+		int matriz[15][15] = {{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 },
+			{1,0,3,0,3,0,3,0,3,0,3,3,3,0,1 },
+			{1,0,2,3,2,3,2,0,2,3,2,3,2,3,1 },
+			{1,3,3,0,3,0,3,3,0,0,3,0,3,0,1 },
+			{1,0,2,3,2,3,2,0,2,3,2,3,2,3,1 },
+			{1,3,0,3,0,0,3,0,3,0,3,0,0,3,1 },
+			{1,0,2,0,2,3,2,3,2,0,2,3,2,0,1 },
+			{1,3,3,0,3,0,3,0,3,0,3,0,3,0,1 },
+			{1,0,2,3,2,3,2,3,2,3,2,0,2,3,1 },
+			{1,3,0,0,0,3,3,0,3,0,3,3,3,0,1 },
+			{1,3,2,3,2,0,2,3,2,3,2,0,2,0,1 },
+			{1,0,3,0,0,3,0,3,0,3,0,3,0,3,1 },
+			{1,3,2,0,2,0,2,0,2,3,2,0,2,0,1 },
+			{1,0,3,0,3,3,0,3,0,0,3,3,0,3,1 },
+			{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 } };
 		GraphicsUnit::Pixel;
 		mapa->Read_Map(1, buffer, Bsolido, BDestructible, BBorde, BPasto);
-		player1->move(buffer);
+		//player1->move(buffer);
+		o->Draw(buffer, BBorde, matriz);
 		buffer->Render(g);
 		delete buffer, espacio, g;
 	}
