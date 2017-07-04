@@ -1,6 +1,0 @@
-﻿  formulario.cpp
-c:\users\lenovo\desktop\demojuegobomberman_v3.0.1\demojuegobomberman\Jugador.h(107): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-c:\users\lenovo\desktop\demojuegobomberman_v3.0.1\demojuegobomberman\Jugador.h(121): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-c:\users\lenovo\desktop\demojuegobomberman_v3.0.1\demojuegobomberman\Bombas.h(117): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-  DemoJuegoBomberman.vcxproj -> C:\Users\Lenovo\Desktop\DemoJuegoBomberman_v3.0.1\Debug\DemoJuegoBomberman.exe
-  DemoJuegoBomberman.vcxproj -> C:\Users\Lenovo\Desktop\DemoJuegoBomberman_v3.0.1\Debug\DemoJuegoBomberman.pdb (Full PDB)
