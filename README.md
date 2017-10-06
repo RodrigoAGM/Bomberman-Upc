@@ -1,4 +1,4 @@
-# Bomberman UPC
+# Bomberman UPC :bomb:
 #### Bomberman game made as final project for algorithms and data structure class CC68 at UPC. Developed by @enzoftware, @daztery and @RodrigoAGM using concepts of:
 
 - Queues
@@ -15,4 +15,4 @@
 
 ---
 
-#### Made by <a href = "https://github.com/enzoftware"> @enzoftware </a>, <a href = "https://github.com/RodrigoAGM">@RodrigoAGM </a> and <a href = "https://github.com/daztery">@daztery </a>
+#### Made by <a href = "https://github.com/enzoftware"> @enzoftware </a>, <a href = "https://github.com/RodrigoAGM">@RodrigoAGM </a> and <a href = "https://github.com/daztery">@daztery </a> :peru:
